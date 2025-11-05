@@ -16,16 +16,25 @@ Instructions:
 """
 
 # TODO: Create the datasets - up to you to fill in the data
-temperatures = []
-city_population = {}
+temperatures = [68, 70, 72, 75, 71, 69, 73]
+city_population = {"New York": 8468000,
+    "Los Angeles": 3899000,
+    "Chicago": 2706000,
+    "Houston": 2320000,
+    "Phoenix": 1680000}
 
 # TODO: Compute aggregates
+average_temperature = sum(temperatures) / len(temperatures)
+largest_city = max(city_population, key=city_population.get) # type: ignore
+largest_population = city_population[largest_city]
+
+
 average_temperature = 0
 largest_city = ""
 largest_population = 0
 total_population = 0
 
 # TODO: Print results
-print("Average temperature:", average_temperature)
+print("Average temperature:", round(average_temperature, 2), "°F")
 print("Largest city:", largest_city, "-", largest_population)
 print("Total population:", total_population)
